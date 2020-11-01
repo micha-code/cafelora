@@ -3,14 +3,31 @@ import './style.css';
 
 console.log('funguju!');
 
-const btnElm = document.querySelector('#nav-btn');
-const navElm = document.querySelector('nav');
-const menuElm = document.querySelectorAll('nav a');
+//zprovozneni navigace//
+const nav = document.querySelector('nav');
+const navMenu = document.querySelectorAll('nav a');
 
-const navMenu = () => {
-  navElm.classList.toggle('nav-closed');
-};
+document.querySelector('#nav-btn').addEventListener('click', () => {
+  nav.classList.toggle('nav-closed');
+});
 
-menuElm.forEach(() => navMenu);
-btnElm.addEventListener('click', navMenu);
+navMenu.forEach((navMenu) => {
+  navMenu.addEventListener('click', () => {
+    nav.classList.toggle('nav-closed');
+  });
+});
 
+//4.objednávaní//
+const orderBtn = document.querySelector('.order-btn');
+const drinkElm = document.querySelector('.drink__cup');
+let ordered = false;
+
+orderBtn.addEventListener('click', () => {
+  drinkElm.classList.toggle('drink__cup--selected');
+  if (ordered === false) {
+    orderBtn.textContent = 'Zrušit';
+  } else {
+    orderBtn.textContent = 'Objednat';
+  }
+  ordered = !ordered;
+});
