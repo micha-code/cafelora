@@ -134,6 +134,15 @@ nav a:hover {
   font-size: 1.2rem;
 }
 
+.gallery p {
+  max-width: 50rem;
+  margin: 0 auto 0 auto;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
 .menu-intro {
   max-width: 20rem;
   margin: 0 auto 0 auto;
